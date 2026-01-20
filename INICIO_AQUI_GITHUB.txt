@@ -1,0 +1,86 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║     🎯 EMPIEZA AQUÍ - SUBIR TU PROYECTO A GITHUB                 ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+📋 PREPARACIÓN (5 minutos)
+═══════════════════════════════════════════════════════════════════
+
+1️⃣  CREAR PERSONAL ACCESS TOKEN
+
+    ▸ Ve a: https://github.com/settings/tokens
+    ▸ Clic: "Generate new token (classic)"
+    ▸ Nombre: "Sistema Cruceros Backup"
+    ▸ Marca: ✅ repo (todos los items)
+    ▸ Clic: "Generate token"
+    ▸ COPIA el token (empieza con ghp_...)
+    ▸ Guárdalo temporalmente (Notepad)
+
+
+2️⃣  PREPARAR TUS DATOS
+
+    Necesitas:
+    • Tu nombre: _______________________
+    • Tu email: _______________________
+    • Tu token: ghp___________________
+
+
+═══════════════════════════════════════════════════════════════════
+🚀 EJECUCIÓN (3 minutos)
+═══════════════════════════════════════════════════════════════════
+
+ABRE EL ARCHIVO: COMANDOS_PARA_GITHUB.txt
+
+Sigue los pasos allí (copia y pega los comandos uno por uno)
+
+
+═══════════════════════════════════════════════════════════════════
+✅ VERIFICACIÓN (1 minuto)
+═══════════════════════════════════════════════════════════════════
+
+Cuando termines, verifica:
+
+1. Abre: https://github.com/alfredojesuszappa-sys/sistema-cruceros
+
+2. Deberías ver:
+   ✓ Carpeta src/
+   ✓ Carpeta public/
+   ✓ Archivos: package.json, README.md, etc.
+   ✓ Commit reciente: "📦 Backup completo..."
+
+
+═══════════════════════════════════════════════════════════════════
+📁 ARCHIVOS DE AYUDA
+═══════════════════════════════════════════════════════════════════
+
+▸ COMANDOS_PARA_GITHUB.txt ........... Guía visual paso a paso
+▸ SUBIR_A_GITHUB_RAPIDO.txt .......... Versión detallada con troubleshooting
+▸ DESCARGAR_PROYECTO.md .............. Si necesitas bajar a disco local
+
+
+═══════════════════════════════════════════════════════════════════
+❓ ¿PROBLEMAS?
+═══════════════════════════════════════════════════════════════════
+
+Consulta: SUBIR_A_GITHUB_RAPIDO.txt (sección "SI HAY PROBLEMAS")
+
+
+═══════════════════════════════════════════════════════════════════
+🎉 RESULTADO FINAL
+═══════════════════════════════════════════════════════════════════
+
+Después de seguir los pasos tendrás:
+
+✅ Código respaldado en GitHub
+✅ Control de versiones activado
+✅ Historial de cambios guardado
+✅ Backup seguro en la nube
+
+
+═══════════════════════════════════════════════════════════════════
+
+           👉 SIGUIENTE PASO: Abre COMANDOS_PARA_GITHUB.txt
+
+═══════════════════════════════════════════════════════════════════

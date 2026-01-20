@@ -1,0 +1,87 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                   ✅ PROBLEMA RESUELTO                                    ║
+║                                                                          ║
+║  "La planilla no está registrando las fechas de amarre y zarpada"       ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+🎯 SOLUCIÓN:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Las fechas SÍ se estaban calculando, pero NO se mostraban en las columnas
+correctas. Ahora:
+
+✅ Columna "⚓ AMARRE (ETA Pto)" - VISIBLE con fondo VERDE
+✅ Columna "🚢 ZARPADA (ETD Pto)" - VISIBLE con fondo NARANJA
+✅ Estas fechas se usan para calcular las reservas ACC
+✅ Aparecen tanto en la planilla como en el reporte A3
+
+
+📊 NUEVA TABLA - AHORA CLARA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌───────────┬─────────────┬───────────────────┬───────────────────┬─────────────┐
+│  Inicio   │ ETA KM 118  │  ⚓ AMARRE         │ 🚢 ZARPADA        │ ETD KM 118  │
+│ Tránsito  │             │  (ETA Pto) 🟢     │  (ETD Pto) 🟠     │             │
+├───────────┼─────────────┼───────────────────┼───────────────────┼─────────────┤
+│ 29/01 8:00│ 29/01 14:30 │  29/01  16:45     │  31/01  14:00     │ 31/01 20:30 │
+└───────────┴─────────────┴───────────────────┴───────────────────┴─────────────┘
+                              ✅ VISIBLE           ✅ VISIBLE
+                          (para ACC Entrada)   (para ACC Salida)
+
+
+📋 CÁLCULO DE RESERVAS ACC:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   ACC ENTRADA = ⚓ AMARRE - X horas
+   ────────────────────────────────
+   Si amarre es 29/01 16:45
+   → Clase A: ACC = 29/01 14:15 (2:30h antes) ✅
+   → Clase B: ACC = 29/01 14:45 (2:00h antes) ✅
+   → Clase C: ACC = 29/01 15:15 (1:30h antes) ✅
+
+   ACC SALIDA = 🚢 ZARPADA - X horas
+   ─────────────────────────────────
+   Si zarpada es 31/01 14:00
+   → Clase A: ACC = 31/01 11:30 (2:30h antes) ✅
+   → Clase B: ACC = 31/01 12:00 (2:00h antes) ✅
+   → Clase C: ACC = 31/01 12:30 (1:30h antes) ✅
+
+
+🧪 CÓMO VERIFICAR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Ir a "Gestión de Cruceros"
+2. Ver la planilla de cruceros
+3. Confirmar que las columnas tienen:
+   ✓ ⚓ Amarre (ETA Pto) - con fondo verde
+   ✓ 🚢 Zarpada (ETD Pto) - con fondo naranja
+   ✓ Fechas y horas visibles
+
+4. Click en "Generar Reporte A3"
+5. Abrir el archivo HTML descargado
+6. Verificar:
+   ✓ Columnas "⚓ AMARRE" y "🚢 ZARPADA" visibles
+   ✓ Reservas ACC calculadas correctamente
+   ✓ Leyenda explica el uso de estas columnas
+
+
+📁 ARCHIVOS MODIFICADOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ CrossingManagerSimple2.tsx (tabla principal)
+✅ ships.ts (reporte A3, estilos, leyenda)
+✅ Build exitoso, sin errores
+
+
+🎉 ESTADO: COMPLETADO Y LISTO PARA USAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+El sistema ahora muestra claramente las fechas de AMARRE y ZARPADA que se
+usan para calcular las reservas de canal ACC.
+
+Por favor, recarga la página y verifica que todo funcione correctamente.
+
+
+Fecha: 2026-01-20
+Build: ✅ Exitoso
+Próximo paso: Verificar en el navegador

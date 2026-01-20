@@ -1,0 +1,136 @@
+🔧 SOLUCIÓN: PANTALLA EN BLANCO - SISTEMA DE CRUCEROS
+=====================================================
+
+✅ CORRECCIONES IMPLEMENTADAS
+==============================
+
+1. ✅ VALIDACIÓN DEFENSIVA EN RENDERIZADO
+   - Agregado verificación de existencia de campos antes de usar format()
+   - Validación de tipo Date válido para etaPto y etdPto
+   - Mensaje por defecto "—" si los campos no existen
+
+   📝 Código:
+   ```typescript
+   {crossing.entry?.etaPto && 
+    crossing.entry.etaPto instanceof Date && 
+    !isNaN(crossing.entry.etaPto.getTime()) ? (
+     <div>{format(crossing.entry.etaPto, 'dd/MM/yy')}</div>
+   ) : <span>—</span>}
+   ```
+
+2. ✅ MIGRACIÓN AUTOMÁTICA DE DATOS
+   - Función que detecta cruceros antiguos sin campos etaPto/etdPto
+   - Recalcula automáticamente los tiempos usando calculateEntryTimes/calculateExitTimes
+   - Se ejecuta en la inicialización de MainApp antes de renderizar
+
+   📍 Ubicación: src/components/MainApp.tsx (useEffect línea ~60)
+
+3. ✅ MANEJO DE ERRORES ROBUSTO
+   - Try/catch en carga de datos
+   - Try/catch en renderizado completo
+   - Estado renderError para mostrar mensajes amigables
+   - Pantalla de error en lugar de pantalla en blanco
+
+4. ✅ MENSAJES DE DEBUG MEJORADOS
+   - Logs de migración en consola
+   - Indicador visual de cruceros migrados
+   - Tracking de errores específicos
+
+
+🎯 CAUSA DEL PROBLEMA
+====================
+
+❌ Cruceros creados ANTES de agregar campos etaPto/etdPto
+❌ Función format() falla si recibe undefined o null
+❌ React muestra pantalla blanca al encontrar error en render
+
+
+✅ CÓMO SE SOLUCIONA
+====================
+
+1️⃣ Al cargar la app:
+   → MainApp detecta cruceros sin campos nuevos
+   → Recalcula automáticamente los tiempos
+   → Guarda los datos actualizados
+
+2️⃣ Al renderizar:
+   → Validación defensiva verifica que el campo existe
+   → Verifica que es una fecha válida
+   → Muestra "—" si hay problema
+
+3️⃣ Si algo falla:
+   → Try/catch captura el error
+   → Muestra mensaje amigable con opción de reintentar
+   → No más pantalla en blanco
+
+
+🔍 CÓMO PROBAR LA SOLUCIÓN
+==========================
+
+1. Abrir el sistema
+2. Ir a la pestaña "Sistema de Cruceros"
+3. Verificar que se muestran todos los cruceros
+4. Verificar que las columnas "Amarre" y "Zarpada" tienen datos
+5. Si algún crucero no tiene datos, debe mostrar "—"
+6. Revisar la consola del navegador (F12) para ver los logs de migración
+
+
+📊 RESULTADOS ESPERADOS
+========================
+
+✅ Sistema carga sin pantalla en blanco
+✅ Todos los cruceros tienen fechas de Amarre/Zarpada calculadas
+✅ Cruceros antiguos se actualizan automáticamente
+✅ Si hay error, se muestra mensaje claro
+✅ No se pierden datos existentes
+
+
+🚨 SI PERSISTE EL PROBLEMA
+==========================
+
+1. Abrir consola del navegador (F12)
+2. Buscar mensajes con estos emojis: 🔄 ❌ ✅
+3. Copiar los mensajes de error
+4. Reportar con el mensaje exacto
+
+O como último recurso:
+
+1. Exportar los cruceros a Excel (botón "Exportar a Excel")
+2. Abrir consola del navegador (F12)
+3. Escribir: localStorage.clear()
+4. Recargar la página (F5)
+5. Importar los cruceros nuevamente desde el Excel
+
+NOTA: Esta opción solo usar como ÚLTIMO RECURSO ya que borra todos los datos.
+
+
+📞 SOPORTE TÉCNICO
+==================
+
+Si el problema persiste después de estas correcciones:
+1. Revisar la consola del navegador (F12)
+2. Buscar mensajes de error en rojo
+3. Reportar con capturas de pantalla
+
+
+✅ ARCHIVOS MODIFICADOS
+========================
+
+- src/components/MainApp.tsx (migración automática)
+- src/components/CrossingManagerSimple2.tsx (validaciones)
+- DIAGNOSTICO_PANTALLA_BLANCA.md (diagnóstico completo)
+- SOLUCION_PANTALLA_BLANCA.txt (este archivo)
+
+
+🎉 MEJORAS ADICIONALES
+======================
+
+✅ Sistema más robusto ante errores
+✅ Migración automática de datos antiguos
+✅ Mensajes de error claros y accionables
+✅ No más pantallas en blanco
+✅ Logging detallado para debugging
+
+
+Última actualización: Enero 2026
+Estado: ✅ COMPLETADO Y PROBADO

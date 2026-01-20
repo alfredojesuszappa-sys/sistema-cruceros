@@ -1,0 +1,264 @@
+
+
+═══════════════════════════════════════════════════════════════
+  📚 ÍNDICE DE DOCUMENTACIÓN DEL SISTEMA
+  Fecha: 14 Enero 2026
+═══════════════════════════════════════════════════════════════
+
+🔥 VALIDACIÓN DE DATOS
+----------------------
+1. RESUMEN_VALIDACION.md
+   - Resumen ejecutivo del sistema de validación
+   - Casos de uso antes/después
+   - Beneficios y características
+   - Estado actual del sistema
+
+2. SISTEMA_VALIDACION.md
+   - Descripción técnica completa de todas las validaciones
+   - 7 tipos de validaciones implementadas
+   - Ejemplos prácticos detallados
+   - Guía para usuarios y configuración
+
+🚀 INICIO RÁPIDO
+--------------
+3. LEEME_PRIMERO.txt
+   - Primera lectura obligatoria
+   - Contexto general del proyecto
+   - Qué encontrar en cada documento
+
+4. INICIO_RAPIDO.txt
+   - Guía paso a paso para comenzar
+   - Cómo agregar el primer crucero
+   - Funciones básicas del sistema
+
+5. INICIO_RAPIDO_V2.md
+   - Versión actualizada y mejorada
+   - Incluye capturas y ejemplos visuales
+   - Proceso completo de detección de conflictos
+
+📖 DOCUMENTACIÓN PARA USUARIOS
+-----------------------------
+6. INSTRUCCIONES_USO.md
+   - Manual completo de usuario
+   - Todas las funciones disponibles
+   - Capturas de pantalla
+   - Resolución de problemas
+
+7. EJEMPLOS_PRUEBA.md
+   - Casos de prueba específicos
+   - Escenarios de conflictos
+   - Cómo probar el sistema
+
+8. GUIA_AGENCIAS_MARITIMAS.md
+   - Específico para agencias marítimas
+   - Cómo usar la planilla CSV
+   - Formato de datos requerido
+   - Proceso de importación
+
+🏗️ DOCUMENTACIÓN TÉCNICA
+-----------------------
+9. README_TECNICO.md
+   - Arquitectura del sistema
+   - Estructura de código
+   - Componentes principales
+   - APIs y funciones
+
+10. ESTADO_ACTUAL_PROYECTO.md
+    - Estado de implementación
+    - Funciones completadas
+    - Próximos pasos
+
+📊 RESÚMENES Y MEJORAS
+--------------------
+11. RESUMEN_EJECUTIVO.txt
+    - Vista general del proyecto
+    - Objetivos cumplidos
+    - Características principales
+
+12. RESUMEN_SISTEMA.md
+    - Descripción del sistema
+    - Funcionalidades clave
+    - Beneficios
+
+13. RESUMEN_MEJORAS_V2.md
+    - Mejoras implementadas en v2
+    - Cambios y correcciones
+    - Nuevas funcionalidades
+
+14. RESUMEN_VISUAL.txt
+    - Resumen en formato visual ASCII
+    - Diagramas de flujo
+    - Estructura del sistema
+
+🔧 CORRECCIONES Y CAMBIOS
+------------------------
+15. CORRECCIONES_APLICADAS.txt
+    - Lista de correcciones realizadas
+    - Bugs solucionados
+
+16. CORRECCIONES_CONFLICTOS.md
+    - Correcciones específicas de conflictos
+    - Sistema de detección mejorado
+
+17. CORRECCIONES_FINALES.md
+    - Últimas correcciones antes de entrega
+    - Ajustes de interfaz y usabilidad
+    - Optimizaciones finales
+
+18. CORRECCION_TIMEZONE_HORAS.md
+    - Problema de zona horaria en visualización de horas ✅
+    - Causa raíz del problema de parseo de fechas
+    - Solución implementada con ejemplos
+    - Guía de verificación y debugging
+
+19. RESUMEN_CORRECCIONES.txt
+    - Resumen de todas las correcciones
+    - Impacto de cada cambio
+
+✅ COMPLETADO Y CAMBIOS
+---------------------
+20. COMPLETADO.txt
+    - Lista de tareas completadas
+    - Checklist del proyecto
+
+21. CAMBIOS_IMPLEMENTADOS.md
+    - Registro de cambios por fecha
+    - Historial de implementaciones
+
+22. MEJORAS_COMPLETADAS.txt
+    - Mejoras finalizadas
+    - Características nuevas
+
+23. MEJORAS_TABLA_Y_PLANILLA.md
+    - Mejoras en la tabla de cruceros
+    - Sistema de planillas Excel/CSV
+
+📋 LISTADOS
+----------
+24. LISTADO_ARCHIVOS_V2.md
+    - Lista completa de archivos del proyecto
+    - Estructura de carpetas
+    - Descripción de cada archivo
+
+📄 DOCUMENTOS PRINCIPALES
+------------------------
+25. README.md
+    - Readme principal del proyecto
+    - Instalación y configuración
+    - Comandos disponibles
+
+ORDEN DE LECTURA RECOMENDADO
+============================
+
+Para USUARIOS NUEVOS:
+  1. RESUMEN_VISUAL.txt         ← Empezar aquí
+  2. EJEMPLOS_PRUEBA.md          ← Probar el sistema
+  3. GUIA_AGENCIAS_MARITIMAS.md  ← Uso diario
+  4. INSTRUCCIONES_USO.md        ← Referencia completa
+
+Para RESOLVER PROBLEMAS:
+  1. RESUMEN_CORRECCIONES.txt    ← Qué se corrigió
+  2. CORRECCIONES_CONFLICTOS.md  ← Explicación técnica
+  3. EJEMPLOS_PRUEBA.md          ← Cómo probar
+
+Para DESARROLLADORES:
+  1. README_TECNICO.md           ← Arquitectura
+  2. CORRECCIONES_CONFLICTOS.md  ← Lógica de negocio
+  3. LISTADO_ARCHIVOS_V2.md      ← Estructura de archivos
+  4. ESTADO_ACTUAL_PROYECTO.md   ← Estado actual
+
+Para GERENTES/DIRECTIVOS:
+  1. RESUMEN_EJECUTIVO.txt       ← Vista general
+  2. RESUMEN_SISTEMA.md          ← Capacidades
+  3. CAMBIOS_IMPLEMENTADOS.md    ← Qué se mejoró
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ⭐ DOCUMENTOS ESENCIALES (LEER PRIMERO)                   │
+└─────────────────────────────────────────────────────────────┘
+
+  ⭐⭐⭐ RESUMEN_VISUAL.txt
+        - Contiene TODO en formato gráfico
+        - Perfecto para entender rápidamente
+        
+  ⭐⭐⭐ EJEMPLOS_PRUEBA.md
+        - Casos prácticos paso a paso
+        - Para probar que todo funciona
+        
+  ⭐⭐   RESUMEN_CORRECCIONES.txt
+        - Qué problemas se resolvieron
+        - Nuevo flujo de trabajo
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  📍 UBICACIÓN DE ARCHIVOS                                  │
+└─────────────────────────────────────────────────────────────┘
+
+Todos los documentos están en la raíz del proyecto:
+  /app/*.md
+  /app/*.txt
+
+Código fuente:
+  /app/src/components/     → Componentes React
+  /app/src/lib/            → Lógica de negocio
+  /app/src/pages/          → Páginas Astro
+
+Configuración:
+  /app/package.json        → Dependencias
+  /app/astro.config.mjs    → Config Astro
+  /app/tsconfig.json       → Config TypeScript
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  🔍 BÚSQUEDA RÁPIDA                                        │
+└─────────────────────────────────────────────────────────────┘
+
+¿Buscas...?
+
+  → Cómo usar el sistema
+    Leer: RESUMEN_VISUAL.txt + EJEMPLOS_PRUEBA.md
+    
+  → Por qué algo no funcionaba
+    Leer: CORRECCIONES_CONFLICTOS.md
+    
+  → Cómo detectar conflictos
+    Leer: CORRECCIONES_CONFLICTOS.md (sección "Lógica de Conflictos")
+    
+  → Ejemplos de prueba
+    Leer: EJEMPLOS_PRUEBA.md (7 casos completos)
+    
+  → Estado del proyecto
+    Leer: ESTADO_ACTUAL_PROYECTO.md
+    
+  → Guía para agencias
+    Leer: GUIA_AGENCIAS_MARITIMAS.md
+    
+  → Explicación técnica
+    Leer: README_TECNICO.md + CORRECCIONES_CONFLICTOS.md
+    
+  → Flujo de trabajo
+    Ver: RESUMEN_VISUAL.txt (sección "Flujo de Trabajo")
+
+
+┌─────────────────────────────────────────────────────────────┐
+│  ✅ CHECKLIST DE LECTURA                                   │
+└─────────────────────────────────────────────────────────────┘
+
+Para estar completamente al día:
+
+  □ Leer RESUMEN_VISUAL.txt
+  □ Leer RESUMEN_CORRECCIONES.txt  
+  □ Leer EJEMPLOS_PRUEBA.md
+  □ Probar casos de prueba 1-3
+  □ Verificar detección de conflictos
+  □ Probar aplicar solución
+  □ Generar planilla A3
+  
+Una vez completado, ¡estás listo para usar el sistema! 🚢
+
+
+═══════════════════════════════════════════════════════════════
+  Fin del Índice
+═══════════════════════════════════════════════════════════════
+
+

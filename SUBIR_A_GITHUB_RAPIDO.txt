@@ -1,0 +1,127 @@
+═══════════════════════════════════════════════════════════
+🚀 COMANDOS PARA SUBIR A GITHUB - COPIA Y PEGA
+═══════════════════════════════════════════════════════════
+
+⚠️ IMPORTANTE: Ejecuta estos comandos UNO POR UNO en la terminal
+donde está tu proyecto (no en PowerShell de Windows, sino en la
+terminal de Webflow si la tienes).
+
+═══════════════════════════════════════════════════════════
+PASO 1: CONFIGURAR GIT (Solo primera vez)
+═══════════════════════════════════════════════════════════
+
+Reemplaza TU_NOMBRE y TU_EMAIL con tus datos reales:
+
+git config --global user.name "TU_NOMBRE_AQUI"
+git config --global user.email "TU_EMAIL_AQUI"
+
+Ejemplo:
+git config --global user.name "Alfredo Zappa"
+git config --global user.email "alfredo@ejemplo.com"
+
+
+═══════════════════════════════════════════════════════════
+PASO 2: AGREGAR ARCHIVOS NUEVOS
+═══════════════════════════════════════════════════════════
+
+git add .
+
+
+═══════════════════════════════════════════════════════════
+PASO 3: HACER COMMIT
+═══════════════════════════════════════════════════════════
+
+git commit -m "📦 Backup completo - Sistema de Cruceros v5.3"
+
+
+═══════════════════════════════════════════════════════════
+PASO 4: CONECTAR CON TU REPOSITORIO DE GITHUB
+═══════════════════════════════════════════════════════════
+
+git remote add origin https://github.com/alfredojesuszappa-sys/sistema-cruceros.git
+
+
+Si ya existe, usa este comando para actualizarlo:
+git remote set-url origin https://github.com/alfredojesuszappa-sys/sistema-cruceros.git
+
+
+═══════════════════════════════════════════════════════════
+PASO 5: VERIFICAR RAMA PRINCIPAL
+═══════════════════════════════════════════════════════════
+
+git branch -M main
+
+
+═══════════════════════════════════════════════════════════
+PASO 6: SUBIR A GITHUB
+═══════════════════════════════════════════════════════════
+
+git push -u origin main
+
+
+⚠️ TE PEDIRÁ AUTENTICACIÓN:
+
+Username: alfredojesuszappa-sys
+Password: [AQUÍ PEGA TU PERSONAL ACCESS TOKEN]
+
+⚠️ IMPORTANTE: NO uses tu contraseña de GitHub normal.
+Usa el Personal Access Token que creaste (empieza con ghp_...)
+
+
+═══════════════════════════════════════════════════════════
+✅ VERIFICACIÓN
+═══════════════════════════════════════════════════════════
+
+Después de ejecutar todo, verifica en tu navegador:
+https://github.com/alfredojesuszappa-sys/sistema-cruceros
+
+Deberías ver todos tus archivos allí.
+
+
+═══════════════════════════════════════════════════════════
+🔄 PARA FUTURAS ACTUALIZACIONES
+═══════════════════════════════════════════════════════════
+
+Cada vez que hagas cambios:
+
+1. git add .
+2. git commit -m "Descripción de tus cambios"
+3. git push
+
+
+═══════════════════════════════════════════════════════════
+❓ SI HAY PROBLEMAS
+═══════════════════════════════════════════════════════════
+
+Error: "remote origin already exists"
+Solución: git remote set-url origin https://github.com/alfredojesuszappa-sys/sistema-cruceros.git
+
+Error: "failed to push some refs"
+Solución: git pull origin main --rebase
+          Luego: git push -u origin main
+
+Error: "Authentication failed"
+Solución: Verifica que estés usando el Personal Access Token
+          (no tu contraseña normal)
+
+
+═══════════════════════════════════════════════════════════
+📋 CHECKLIST
+═══════════════════════════════════════════════════════════
+
+[ ] 1. Creé mi Personal Access Token en GitHub
+[ ] 2. Configuré git con mi nombre y email
+[ ] 3. Ejecuté: git add .
+[ ] 4. Ejecuté: git commit -m "mensaje"
+[ ] 5. Ejecuté: git remote add origin [URL]
+[ ] 6. Ejecuté: git branch -M main
+[ ] 7. Ejecuté: git push -u origin main
+[ ] 8. Verifiqué en GitHub que los archivos están allí
+
+
+═══════════════════════════════════════════════════════════
+🎉 ¡LISTO!
+═══════════════════════════════════════════════════════════
+
+Tu código ahora está respaldado en GitHub de forma segura.
+

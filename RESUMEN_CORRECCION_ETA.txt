@@ -1,0 +1,134 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║         ✅ CORRECCIÓN: ETA DE AMARRE IMPLEMENTADA                ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+
+🔴 PROBLEMA
+═══════════════════════════════════════════════════════════════════
+
+  La columna "⚓ Amarre (ETA Pto)" mostraba "—" en lugar de la
+  fecha y hora calculada para los cruceros existentes.
+
+
+🔍 CAUSA
+═══════════════════════════════════════════════════════════════════
+
+  Los cruceros creados ANTES de la corrección del tiempo entre
+  KM 118.5 y KM 59 NO tenían calculado el campo entry.etaPto.
+
+
+🛠️ SOLUCIÓN IMPLEMENTADA
+═══════════════════════════════════════════════════════════════════
+
+  ✅ Sistema de recálculo automático al cargar la página
+  ✅ Actualización de cruceros desactualizados en localStorage
+  ✅ Logs de debugging para seguimiento
+  ✅ Proceso transparente sin intervención del usuario
+
+
+📊 EJEMPLO: MSC SEAVIEW (Clase A)
+═══════════════════════════════════════════════════════════════════
+
+  ANTES DE LA CORRECCIÓN:
+  ┌──────────────────────────────────────────┐
+  │ ⚓ Amarre (ETA Pto)                      │
+  │ —  (Sin calcular)                       │
+  └──────────────────────────────────────────┘
+
+  DESPUÉS DE LA CORRECCIÓN:
+  ┌──────────────────────────────────────────┐
+  │ ⚓ Amarre (ETA Pto)                      │
+  │ 29/01/26                                 │
+  │ 08:20  ✅                                │
+  └──────────────────────────────────────────┘
+
+  CÁLCULO DETALLADO:
+  
+  KM 239 (Inicio)    → 28/01/26 20:30
+  + 4:50 horas       = 29/01/26 01:20  (KM 118.5)
+  + 2:30 horas ⭐    = 29/01/26 03:50  (KM 59)
+  + 1:00 hora        = 29/01/26 04:50  (KM 37)
+  + 1:30 horas       = 29/01/26 06:20  (KM 7.3)
+  + 0:30 horas       = 29/01/26 06:50  (KM 0)
+  + 1:30 horas       = 29/01/26 08:20  ⚓ AMARRE
+
+
+🧪 CÓMO PROBAR
+═══════════════════════════════════════════════════════════════════
+
+  1. Recargar la página con Ctrl + Shift + R
+
+  2. Abrir consola del navegador (F12)
+
+  3. Verificar logs:
+     🔄 Verificando si es necesario recalcular tiempos...
+     ⚠️ Actualizando tiempos para MSC SEAVIEW
+     ✅ Recálculo completado. Recargando datos...
+
+  4. Verificar tabla:
+     La columna "⚓ Amarre (ETA Pto)" debe mostrar fecha y hora
+
+
+⚠️ ALTERNATIVA MANUAL (si es necesario)
+═══════════════════════════════════════════════════════════════════
+
+  OPCIÓN 1: Editar y Guardar
+  
+    1. Ir a "Planilla de Cruceros"
+    2. Clic en "Editar" en el crucero
+    3. Sin cambiar nada, clic en "Guardar Cambios"
+    4. El sistema recalculará automáticamente
+
+  OPCIÓN 2: Limpiar Cache
+  
+    1. Abrir consola (F12)
+    2. Ejecutar:
+       localStorage.clear();
+       location.reload();
+    
+    ⚠️ ADVERTENCIA: Eliminará TODOS los datos
+       Deberá reimportar desde CSV
+
+
+📁 ARCHIVOS MODIFICADOS
+═══════════════════════════════════════════════════════════════════
+
+  ✅ src/components/CrossingManagerSimple2.tsx
+     - Sistema de recálculo automático
+     - Verificación de cruceros desactualizados
+     - Logs de debugging
+
+  ✅ src/lib/ships.ts (previamente corregido)
+     - ENTRY_TIMES.KM118_5_TO_KM59 = 150 minutos
+     - Cálculo de etaPto incluido
+
+
+✅ RESULTADO ESPERADO
+═══════════════════════════════════════════════════════════════════
+
+  ✅ Todos los cruceros muestran ⚓ Amarre (ETA Pto) calculado
+  ✅ Los tiempos son coherentes con la tabla de referencia
+  ✅ Los nuevos cruceros se calculan correctamente
+  ✅ Los cruceros existentes se actualizan automáticamente
+
+
+🚀 BUILD Y DEPLOYMENT
+═══════════════════════════════════════════════════════════════════
+
+  npm run build
+
+  ✅ Build exitoso - Sin errores
+  ✅ Sistema listo para producción
+  ✅ Recálculo automático activo
+
+
+═══════════════════════════════════════════════════════════════════
+
+  📄 Documentación completa: SOLUCION_ETA_AMARRE.md
+  
+  Fecha: 20/01/2026
+  Versión: v5.2 - Recálculo Automático ETA Amarre
+
+═══════════════════════════════════════════════════════════════════

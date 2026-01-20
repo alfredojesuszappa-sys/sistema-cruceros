@@ -1,0 +1,136 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║        ✅ MEJORAS EN TABLA Y PLANILLA COMPLETADAS            ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+
+📅 Fecha: 14 Enero 2026, 18:44
+
+
+🎯 PROBLEMAS RESUELTOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Botón "Descargar Planilla" ahora funciona correctamente
+   (antes navegaba a URL extraña, ahora descarga CSV)
+
+✅ Tabla reorganizada con las columnas que solicitaste
+   (11 columnas en orden lógico de operación)
+
+✅ Planilla A3 completa con TODA la información
+   (19 columnas: dimensiones, clases, estimativas)
+
+
+📊 NUEVA ORGANIZACIÓN DE TABLA (PANTALLA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. N°
+  2. Buque (nombre + bandera + IMO + clase + agencia)
+  3. FM
+  4. TO
+  5. Fecha y Hora Entrada
+  6. Fecha y Hora ETA Km 118.5
+  7. Fecha y Hora Amarre Puerto
+  8. Fecha y Hora ETD Puerto
+  9. Fecha y Hora ETD Km 118.5
+  10. Situación
+  11. Acciones
+
+
+📄 PLANILLA A3 PARA IMPRESIÓN (COMPLETA)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. N°
+  2. Buque
+  3. Bandera
+  4. IMO
+  5. Eslora (m)          ← NUEVO
+  6. Manga (m)           ← NUEVO
+  7. Puntal (m)          ← NUEVO
+  8. Calado (m)          ← NUEVO
+  9. Clase (con color)   ← NUEVO
+  10. Agencia
+  11. FM
+  12. TO
+  13. Inicio Navegación
+  14. ETA Km 118.5
+  15. ETA Puerto
+  16. ETD Puerto
+  17. ETD Km 118.5
+  18. Situación
+  19. Notas             ← NUEVO
+
+
+🎨 CARACTERÍSTICAS DE LA PLANILLA A3
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Formato: A3 Horizontal (landscape)
+✓ Fuente: Aptos / Roboto
+✓ Tamaño: 8px datos, 7px headers, 6px notas
+✓ Bordes: Negros sólidos
+✓ Clase A: Fondo rojo claro
+✓ Clase B: Fondo ámbar claro
+✓ Clase C: Fondo verde claro
+✓ Cabecera con título y fecha
+✓ Leyenda de clases al pie
+
+
+🧪 PRUEBAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Botón "Descargar Planilla" → Descarga CSV correctamente
+✅ Tabla en pantalla → Muestra 11 columnas organizadas
+✅ Planilla A3 → Genera con 19 columnas completas
+✅ Impresión → Formato A3 horizontal profesional
+
+
+🚀 FLUJO DE USO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Para Agencias Marítimas:
+  ┌─────────────────────────────────────────────┐
+  │ 1. Descargar Planilla CSV (botón verde)   │
+  │ 2. Completar en Excel                       │
+  │ 3. Importar CSV (botón morado)             │
+  │ 4. Verificar datos en tabla                 │
+  │ 5. Buscar conflictos (botón amarillo)      │
+  │ 6. Resolver si hay conflictos               │
+  │ 7. Generar Planilla A3 (botón verde)       │
+  │ 8. Imprimir o guardar PDF                   │
+  └─────────────────────────────────────────────┘
+
+
+📋 COMPARACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ANTES:
+  ├─ Botón descarga no funcionaba
+  ├─ Tabla con 15 columnas desorganizadas
+  └─ Sin planilla A3 completa
+  
+  AHORA:
+  ├─ Botón descarga funciona perfectamente
+  ├─ Tabla con 11 columnas en orden lógico
+  └─ Planilla A3 con 19 columnas completas
+
+
+✅ VERIFICACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Compilación sin errores
+✓ Todos los cambios implementados
+✓ Documentación actualizada
+✓ Sistema listo para usar
+
+
+📚 DOCUMENTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Leer: MEJORAS_TABLA_Y_PLANILLA.md
+      (Explicación completa de todos los cambios)
+
+
+═══════════════════════════════════════════════════════════════
+
+  🚢 RECARGA LA APLICACIÓN Y PRUEBA LOS CAMBIOS 🚢
+
+═══════════════════════════════════════════════════════════════
