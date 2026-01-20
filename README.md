@@ -1,291 +1,453 @@
-# 🚢 Sistema de Gestión de Cruceros - Canal Punta Indio
+# 🚢 Sistema de Gestión de Cruceros Oceánicos
 
-Sistema integral para la gestión y control de movimientos de cruceros en el Canal de Acceso a Puerto Buenos Aires.
+> **Sistema integral para la gestión y control de tráfico de cruceros en puertos marítimos**
 
-![Estado](https://img.shields.io/badge/Estado-Producción-success)
-![Versión](https://img.shields.io/badge/Versión-5.3-blue)
-![Build](https://img.shields.io/badge/Build-Passing-brightgreen)
-
----
-
-## 📋 Descripción
-
-Sistema web profesional diseñado para **Agencias Marítimas** que gestiona:
-
-- ✅ **Control de buques y cruceros**
-- ✅ **Planificación de movimientos marítimos**
-- ✅ **Cálculo automático de reservas de canal**
-- ✅ **Detección de conflictos en tránsito**
-- ✅ **Generación de reportes A3 profesionales**
-- ✅ **Estadísticas y análisis en tiempo real**
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/tu-usuario/sistema-cruceros/releases)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 
 ---
 
-## 🚀 Características Principales
+## 📋 Tabla de Contenidos
 
-### 1. Dashboard Ejecutivo
-- Métricas en tiempo real
-- Alertas de conflictos
-- Resumen de movimientos próximos
-- Estadísticas visuales
-
-### 2. Gestión Completa de Buques
-- Base de datos de cruceros
-- Información detallada (IMO, eslora, manga, calado, clase)
-- Búsqueda y filtrado avanzado
-- Importación masiva desde CSV/Excel
-
-### 3. Planilla de Cruceros
-- Registro de movimientos con validación automática
-- Cálculo inteligente de ETAs/ETDs
-- Detección de conflictos de horarios
-- Estados: Confirmado, En Espera, Cancelado
-
-### 4. Reservas de Canal
-Cálculo automático de franjas horarias:
-- **CPI Entrada** (KM 239/216 → KM 118.5)
-- **ACC Entrada** (KM 118.5 → KM 59/0)
-- **ACC Salida** (KM 59/0 → KM 118.5)
-- **CPI Salida** (KM 118.5 → KM 239/216/59)
-
-### 5. Reportes Profesionales
-- Exportación a Excel (.xlsx)
-- Reporte A3 para impresión
-- Formato optimizado para agencias marítimas
-- Vista consolidada de todos los movimientos
-
-### 6. Estadísticas
-- Cruceros por mes
-- Distribución por clase (A, B, C)
-- Análisis de banderas
-- Tendencias de ocupación
+- [Descripción](#-descripción)
+- [Características Principales](#-características-principales)
+- [Capturas de Pantalla](#-capturas-de-pantalla)
+- [Instalación](#-instalación)
+- [Versión Portable](#-versión-portable-windows)
+- [Uso del Sistema](#-uso-del-sistema)
+- [Documentación Técnica](#-documentación-técnica)
+- [Estructura del Proyecto](#-estructura-del-proyecto)
+- [Tecnologías Utilizadas](#-tecnologías-utilizadas)
+- [Roadmap](#-roadmap)
+- [Contribución](#-contribución)
+- [Licencia](#-licencia)
+- [Autor](#-autor)
 
 ---
 
-## 🛠️ Tecnologías
+## 🎯 Descripción
 
-- **Frontend:** React 19 + TypeScript
-- **Framework:** Astro 5
-- **UI Components:** shadcn/ui + Radix UI
-- **Estilos:** Tailwind CSS 4
-- **Gráficos:** Recharts
-- **Validación:** Zod + React Hook Form
-- **Fechas:** date-fns
-- **Deployment:** Cloudflare Workers
-- **Build:** Vite
+El **Sistema de Gestión de Cruceros Oceánicos** es una aplicación web completa diseñada para facilitar la administración, planificación y control del tráfico de cruceros en puertos marítimos. Permite gestionar movimientos, calcular reservas de canal, detectar conflictos y generar reportes detallados.
+
+### 🎁 Características Destacadas
+
+- ✅ **100% Offline** - Funciona sin conexión a internet
+- ✅ **Base de datos integrada** - 75 buques precargados
+- ✅ **Cálculos automáticos** - Reservas de canal CPI/ACC
+- ✅ **Detección de conflictos** - Sistema inteligente para KM 118.5
+- ✅ **Reportes A3** - Generación de informes para impresión
+- ✅ **Importación/Exportación** - Datos en Excel/CSV
+- ✅ **Versión portable** - Ejecutable para Windows sin instalación
 
 ---
 
-## 📦 Instalación
+## 🌟 Características Principales
 
-### Prerrequisitos
-- Node.js 18+ 
-- npm o yarn
+### 📊 Gestión de Movimientos
 
-### Pasos
+- **Registro de llegadas y salidas** de cruceros
+- **Cálculo automático de tiempos:**
+  - ETA (Estimated Time of Arrival)
+  - ETD (Estimated Time of Departure)
+  - Hora de amarre
+  - Hora de zarpada
+- **Estados del buque:**
+  - En tránsito
+  - En puerto
+  - Zarpado
+  - Cancelado
+
+### 🛳️ Base de Datos de Buques
+
+- **75 cruceros oceánicos** precargados
+- **Información completa:**
+  - Nombre del buque
+  - Eslora, manga, puntal, calado
+  - IMO, bandera
+  - Agencia marítima
+  - Capacidad de pasajeros
+- **Búsqueda y filtrado** avanzado
+- **Importación masiva** desde Excel/CSV
+
+### 🚦 Gestión de Canales
+
+#### Canal CPI (Canal Principal de Ingreso)
+- Cálculo automático de reservas de entrada/salida
+- Duración: 60 minutos desde ETA Practicaje
+
+#### Canal ACC (Área de Control de Cruceros)
+- Reserva de entrada: 15 min antes de ETA amarre
+- Reserva de salida: Calculada desde hora de zarpada
+- **Detección automática de conflictos** en KM 118.5
+
+### 📈 Estadísticas y Reportes
+
+- **Dashboard en tiempo real:**
+  - Total de pasajeros ingresados/egresados
+  - Buques en puerto
+  - Próximas llegadas
+  - Alertas de conflictos
+- **Reporte A3 para impresión:**
+  - Formato profesional
+  - Exportable a PDF
+  - Optimizado para impresión en A3 landscape
+
+### 💾 Backup y Exportación
+
+- **Exportación de datos** a Excel/CSV
+- **Herramienta de backup** integrada
+- **Importación/Restauración** de datos
+- **Plantilla Excel** incluida
+
+---
+
+## 📸 Capturas de Pantalla
+
+### Dashboard Principal
+![Dashboard](docs/screenshots/dashboard.png)
+
+### Gestión de Movimientos
+![Movimientos](docs/screenshots/movimientos.png)
+
+### Base de Datos de Buques
+![Buques](docs/screenshots/buques.png)
+
+### Reporte A3
+![Reporte](docs/screenshots/reporte.png)
+
+---
+
+## 🚀 Instalación
+
+### Requisitos Previos
+
+- **Node.js** >= 18.0.0
+- **npm** >= 9.0.0
+- Navegador web moderno (Chrome, Firefox, Edge)
+
+### Instalación desde Código Fuente
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/TU_USUARIO/sistema-cruceros.git
+git clone https://github.com/tu-usuario/sistema-cruceros.git
 cd sistema-cruceros
 
 # 2. Instalar dependencias
 npm install
 
-# 3. Configurar variables de entorno (opcional)
-cp .env.example .env
-
-# 4. Iniciar servidor de desarrollo
+# 3. Iniciar el servidor de desarrollo
 npm run dev
+
+# 4. Abrir en el navegador
+# http://localhost:4321
 ```
 
-El sistema estará disponible en: `http://localhost:3000`
-
----
-
-## 🏗️ Build para Producción
+### Build para Producción
 
 ```bash
-# Build optimizado
-npm run build
+# Build estático
+npm run build:static
 
-# Preview del build
-npm run preview
+# El resultado estará en /dist
 ```
 
 ---
 
-## 📖 Documentación
+## 💻 Versión Portable (Windows)
 
-### Para Usuarios
-- **[Manual de Usuario](./MANUAL_USUARIO.md)** - Guía completa de uso
-- **[Guía Rápida](./INICIO_RAPIDO.md)** - Inicio rápido
-- **[Importación de Datos](./GUIA_IMPORTACION_EXCEL.md)** - Cómo importar cruceros
-- **[Reporte A3](./TUTORIAL_REPORTE_A3.md)** - Generación de reportes
+La versión portable **NO requiere instalación** y funciona completamente **offline**.
 
-### Para Desarrolladores
-- **[Documentación Técnica](./DOCUMENTACION_TECNICA_INGENIERIA.md)** - Arquitectura del sistema
-- **[Guía de Despliegue](./GUIA_DESPLIEGUE_PRODUCCION.md)** - Deploy a producción
-- **[Checklist de Producción](./CHECKLIST_PRODUCCION.md)** - Verificación QA
+### 📥 Descarga
 
-### Historial de Cambios
-- **[Changelog V4](./CHANGELOG_V4.md)** - Últimas actualizaciones
-- **[Correcciones Aplicadas](./CORRECCIONES_APLICADAS.txt)** - Fixes implementados
+1. Ve a [Releases](https://github.com/tu-usuario/sistema-cruceros/releases)
+2. Descarga `Sistema-Cruceros-Portable.zip`
+3. Extrae el archivo ZIP
+4. Ejecuta `INICIAR.bat`
+
+### ✅ Requisitos
+
+- Windows 7/8/10/11
+- Node.js 18+ (se puede descargar desde [nodejs.org](https://nodejs.org))
+
+### 🎮 Uso de la Versión Portable
+
+```
+Sistema-Cruceros-Portable/
+├── 📄 INICIAR.bat          ← Doble clic para iniciar
+├── 📄 LEEME_PRIMERO.txt    ← Instrucciones
+├── 📄 index.html           ← Aplicación
+└── 📁 _astro/              ← Archivos del sistema
+```
+
+**Pasos:**
+
+1. **Doble clic en `INICIAR.bat`**
+2. El navegador se abrirá automáticamente
+3. ¡Listo para usar!
+
+**Detener el servidor:**
+- Cierra la ventana del símbolo del sistema
+- O presiona `Ctrl + C`
 
 ---
 
-## 🎯 Casos de Uso
+## 📖 Uso del Sistema
 
-### Agencias Marítimas
+### 1️⃣ Primer Inicio
+
+Al abrir la aplicación por primera vez:
+
+1. **Dashboard** muestra estadísticas en cero
+2. **Base de datos de buques** cargada con 75 cruceros
+3. **Sin movimientos registrados**
+
+### 2️⃣ Registrar un Movimiento
+
+1. Ve a **"Gestión de Movimientos"**
+2. Click en **"+ Nuevo Movimiento"**
+3. Completa el formulario:
+   - Selecciona el buque
+   - Ingresa fecha/hora de llegada (ETA Practicaje)
+   - Define tiempo de estadía
+   - Ingresa cantidad de pasajeros
+4. Click en **"Guardar"**
+
+El sistema calculará automáticamente:
+- ✅ Hora de amarre (ETA Practicaje + 60 min)
+- ✅ Hora de zarpada (Amarre + estadía)
+- ✅ Reservas de canal CPI y ACC
+- ✅ Detección de conflictos
+
+### 3️⃣ Importar Datos desde Excel
+
+1. Ve a **"Gestión de Movimientos"**
+2. Click en **"Importar Excel/CSV"**
+3. Descarga la plantilla incluida
+4. Completa la plantilla con tus datos
+5. Sube el archivo
+6. ¡Listo! Los datos se importarán automáticamente
+
+### 4️⃣ Generar Reporte A3
+
+1. Ve a **"Reporte A3"**
+2. Verifica los datos mostrados
+3. Click en **"Imprimir / Exportar PDF"**
+4. Selecciona:
+   - Destino: **Guardar como PDF**
+   - Diseño: **Horizontal**
+   - Tamaño: **A3**
+5. Guarda el archivo
+
+### 5️⃣ Hacer Backup de Datos
+
+**Opción A - Desde la aplicación:**
+1. Ve a **"Configuración"**
+2. Click en **"Exportar Datos"**
+
+**Opción B - Herramienta de Backup:**
+1. Abre `http://localhost:8080/backup-data.html`
+2. Click en **"💾 Descargar Backup"**
+3. Guarda el archivo JSON
+
+---
+
+## 📚 Documentación Técnica
+
+### Documentos Incluidos
+
+| Documento | Descripción |
+|-----------|-------------|
+| **[MANUAL_USUARIO.md](MANUAL_USUARIO.md)** | Guía completa para usuarios finales |
+| **[DOCUMENTACION_TECNICA_INGENIERIA.md](DOCUMENTACION_TECNICA_INGENIERIA.md)** | Documentación técnica detallada |
+| **[INICIO_RAPIDO.md](INICIO_RAPIDO.md)** | Guía rápida de inicio |
+| **[CHANGELOG.md](CHANGELOG.md)** | Historial de cambios |
+
+### Arquitectura del Sistema
+
 ```
-1. Recepción de crucero
-   → Registrar en "Sistema de Cruceros"
-   → Validar datos del buque
-   → Confirmar movimiento
-
-2. Planificación de tránsito
-   → Calcular ETAs automáticas
-   → Verificar conflictos
-   → Asignar muelle
-
-3. Coordinación con Autoridades
-   → Generar reporte A3
-   → Enviar a Prefectura/Administración Portuaria
-   → Confirmar reservas de canal
-```
-
-### Autoridad Portuaria
-```
-1. Visualización de movimientos
-   → Dashboard con cruceros activos
-   → Detección de conflictos
-   → Reservas de canal actualizadas
-
-2. Control de tráfico
-   → Verificar separaciones mínimas
-   → Validar capacidad de canal
-   → Aprobar/rechazar movimientos
+┌─────────────────────────────────────────┐
+│         INTERFAZ DE USUARIO             │
+│  (React + Astro + shadcn/ui + Tailwind) │
+└──────────────┬──────────────────────────┘
+               │
+┌──────────────▼──────────────────────────┐
+│       LÓGICA DE NEGOCIO                 │
+│  - Gestión de movimientos               │
+│  - Cálculos de tiempos                  │
+│  - Detección de conflictos              │
+│  - Validaciones                         │
+└──────────────┬──────────────────────────┘
+               │
+┌──────────────▼──────────────────────────┐
+│     CAPA DE PERSISTENCIA                │
+│      localStorage (Browser)             │
+│  - ships                                │
+│  - crossingMovements                    │
+│  - lastRecalculationTime                │
+└─────────────────────────────────────────┘
 ```
 
 ---
 
-## 📊 Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 sistema-cruceros/
-├── src/
-│   ├── components/          # Componentes React
-│   │   ├── MainApp.tsx      # App principal
-│   │   ├── Dashboard.tsx    # Dashboard ejecutivo
-│   │   ├── ShipManagement.tsx
-│   │   ├── CrossingManagerSimple2.tsx
-│   │   └── Statistics.tsx
-│   ├── lib/
-│   │   ├── ships.ts         # Lógica de negocio
-│   │   ├── excelTemplate.ts # Exportación Excel
-│   │   └── utils.ts
-│   ├── pages/
-│   │   └── index.astro      # Página principal
-│   └── styles/
-│       └── global.css
-├── public/
-│   ├── MANUAL_USUARIO.md
-│   └── DOCUMENTACION_TECNICA_INGENIERIA.md
-├── package.json
-├── astro.config.mjs
-├── tsconfig.json
-└── README.md
+├── 📁 src/
+│   ├── 📁 components/          # Componentes React
+│   │   ├── MainApp.tsx         # Componente principal
+│   │   ├── Dashboard.tsx       # Dashboard estadísticas
+│   │   ├── MovementManager.tsx # Gestión de movimientos
+│   │   ├── ShipDatabase.tsx    # Base de datos buques
+│   │   ├── CrossingManager.tsx # Gestión de cruceros
+│   │   └── Statistics.tsx      # Estadísticas
+│   ├── 📁 lib/
+│   │   ├── ships.ts            # Datos de buques
+│   │   └── utils.ts            # Utilidades
+│   ├── 📁 pages/
+│   │   ├── index.astro         # Página principal
+│   │   └── api/                # Endpoints API
+│   └── 📁 styles/
+│       └── global.css          # Estilos globales
+├── 📁 public/
+│   ├── backup-data.html        # Herramienta de backup
+│   └── plantilla_cruceros.csv  # Plantilla importación
+├── 📁 docs/                    # Documentación
+├── 📄 package.json
+├── 📄 astro.config.mjs
+├── 📄 tsconfig.json
+├── 📄 tailwind.config.js
+└── 📄 README.md
 ```
 
 ---
 
-## 🔧 Scripts Disponibles
+## 🛠️ Tecnologías Utilizadas
 
-```bash
-npm run dev          # Servidor de desarrollo
-npm run build        # Build para producción
-npm run preview      # Preview del build
-npm run astro        # CLI de Astro
-```
+### Frontend
+- **[Astro](https://astro.build/)** 5.13.5 - Framework web moderno
+- **[React](https://react.dev/)** 19.1.1 - Librería UI
+- **[TypeScript](https://www.typescriptlang.org/)** 5.0 - Tipado estático
+- **[Tailwind CSS](https://tailwindcss.com/)** 4.1 - Framework CSS
+- **[shadcn/ui](https://ui.shadcn.com/)** - Componentes UI
+
+### Librerías Principales
+- **[Lucide React](https://lucide.dev/)** - Iconos
+- **[date-fns](https://date-fns.org/)** - Manipulación de fechas
+- **[React Hook Form](https://react-hook-form.com/)** - Formularios
+- **[Zod](https://zod.dev/)** - Validación de esquemas
+- **[Recharts](https://recharts.org/)** - Gráficos
+
+### Almacenamiento
+- **localStorage** (HTML5) - Persistencia de datos local
+
+### Build & Deploy
+- **[Vite](https://vitejs.dev/)** - Build tool
+- **[Cloudflare Workers](https://workers.cloudflare.com/)** - Hosting cloud
+- **Node.js** - Versión portable
 
 ---
 
-## 🐛 Reportar Problemas
+## 🗺️ Roadmap
 
-Si encuentras algún bug o tienes sugerencias:
+### ✅ Versión 1.0 (Actual)
+- [x] Gestión completa de movimientos
+- [x] Base de datos de 75 buques
+- [x] Cálculos automáticos de tiempos
+- [x] Detección de conflictos
+- [x] Reporte A3
+- [x] Importación/Exportación Excel
+- [x] Versión portable Windows
 
-1. Abre un **Issue** en GitHub
-2. Describe el problema detalladamente
-3. Incluye pasos para reproducir
-4. Adjunta capturas de pantalla si es posible
+### 🔮 Versión 1.1 (Próximamente)
+- [ ] **Multi-usuario:** Sistema de login y roles
+- [ ] **Base de datos remota:** Sincronización en la nube
+- [ ] **Notificaciones:** Alertas automáticas por email/SMS
+- [ ] **Calendario visual:** Vista de calendario interactivo
+- [ ] **Reportes personalizados:** Generador de reportes custom
+- [ ] **API REST:** Integración con otros sistemas
+
+### 🚀 Versión 2.0 (Futuro)
+- [ ] **App móvil:** iOS y Android
+- [ ] **IA predictiva:** Optimización de horarios con Machine Learning
+- [ ] **Integración GPS:** Tracking en tiempo real
+- [ ] **Multi-puerto:** Gestión de múltiples puertos
+- [ ] **Blockchain:** Registro inmutable de movimientos
 
 ---
 
-## 🤝 Contribuir
+## 🤝 Contribución
 
-Las contribuciones son bienvenidas! Por favor:
+Las contribuciones son bienvenidas. Por favor:
 
 1. Fork el proyecto
-2. Crea tu rama de feature (`git checkout -b feature/NuevaFuncionalidad`)
-3. Commit tus cambios (`git commit -m 'Agregar nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/NuevaFuncionalidad`)
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add: nueva característica'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
+### 📝 Guías de Contribución
+
+- Usa **TypeScript** para todo el código
+- Sigue las convenciones de **ESLint**
+- Escribe **tests** para nuevas funcionalidades
+- Documenta los cambios en **CHANGELOG.md**
+- Actualiza la documentación según corresponda
+
 ---
 
-## 📝 Licencia
+## 📄 Licencia
 
-Este proyecto es privado y de uso exclusivo para agencias marítimas autorizadas.
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
-## 👥 Créditos
+## 👨‍💻 Autor
 
-**Desarrollado para:** Agencias Marítimas de Buenos Aires  
-**Versión actual:** 5.3  
-**Última actualización:** Enero 2026  
+**Alfredo Jesus Zappa**
+
+- 📧 Email: [tu-email@ejemplo.com](mailto:tu-email@ejemplo.com)
+- 💼 LinkedIn: [linkedin.com/in/tu-perfil](https://linkedin.com/in/tu-perfil)
+- 🐙 GitHub: [@tu-usuario](https://github.com/tu-usuario)
+
+---
+
+## 🙏 Agradecimientos
+
+- Equipo de desarrollo de **Astro**
+- Comunidad de **shadcn/ui**
+- Todos los contribuidores del proyecto
 
 ---
 
 ## 📞 Soporte
 
-Para asistencia técnica:
-- 📧 Email: soporte@sistema-cruceros.com
-- 📱 WhatsApp: +54 9 11 XXXX-XXXX
-- 🌐 Web: https://sistema-cruceros.com
+¿Necesitas ayuda?
+
+- 📖 [Documentación Completa](docs/)
+- 💬 [Discusiones en GitHub](https://github.com/tu-usuario/sistema-cruceros/discussions)
+- 🐛 [Reportar un Bug](https://github.com/tu-usuario/sistema-cruceros/issues)
+- 📧 Email: soporte@ejemplo.com
 
 ---
 
-## ⚡ Inicio Rápido
+## ⭐ ¿Te gustó el proyecto?
 
-```bash
-# Clonar e instalar
-git clone https://github.com/TU_USUARIO/sistema-cruceros.git
-cd sistema-cruceros
-npm install
+Si este proyecto te resultó útil, considera:
 
-# Iniciar
-npm run dev
-```
-
-**¡Listo!** Abre `http://localhost:3000` y comienza a gestionar cruceros.
-
----
-
-## 🎓 Recursos Adicionales
-
-- [Astro Documentation](https://docs.astro.build)
-- [React Documentation](https://react.dev)
-- [shadcn/ui Components](https://ui.shadcn.com)
-- [Tailwind CSS](https://tailwindcss.com)
+- ⭐ Darle una estrella en GitHub
+- 🐛 Reportar bugs o sugerir mejoras
+- 🤝 Contribuir con código
+- 📢 Compartirlo con otros
 
 ---
 
 <div align="center">
 
-**⚓ Sistema de Gestión de Cruceros**  
-*Simplificando la gestión portuaria*
+**Hecho con ❤️ por el equipo de Sistema de Cruceros**
 
-[Documentación](./MANUAL_USUARIO.md) • [Demo](#) • [Reportar Bug](#)
+[⬆ Volver arriba](#-sistema-de-gestión-de-cruceros-oceánicos)
 
 </div>
