@@ -1,0 +1,61 @@
+﻿# 🚢 SISTEMA DE GESTIÓN DE CRUCEROS - Versión Portable
+
+## 📋 INSTRUCCIONES DE USO
+
+### ✅ Requisitos previos:
+- Windows 7 o superior
+- Node.js instalado (si no lo tienes, descárgalo de https://nodejs.org/)
+- O Python 3.x (alternativa)
+
+### 🚀 CÓMO INICIAR EL SISTEMA:
+
+1. Haz doble clic en el archivo: **INICIAR.bat**
+2. Se abrirá una ventana negra (consola) - NO LA CIERRES
+3. Tu navegador se abrirá automáticamente con el sistema
+4. Si no se abre automáticamente, ve a: http://localhost:8080
+
+### 🛑 CÓMO CERRAR EL SISTEMA:
+
+- Simplemente cierra la ventana negra (consola)
+- O presiona Ctrl+C en la consola
+
+### 📂 CÓMO COPIAR A OTRA COMPUTADORA:
+
+1. Copia toda la carpeta "Sistema-Cruceros-Portable" a un pendrive
+2. Pega la carpeta en la otra computadora
+3. Ejecuta INICIAR.bat
+
+### ⚠️ IMPORTANTE:
+
+- NO necesitas internet para usar el sistema (funciona offline)
+- Todos tus datos se guardan en el navegador (localStorage)
+- Si cambias de computadora, exporta tus datos antes
+
+### 📖 DOCUMENTACIÓN:
+
+- **MANUAL_USUARIO.md** - Guía completa de uso del sistema
+- **DOCUMENTACION_TECNICA.md** - Información técnica para desarrolladores
+
+### 🆘 SOLUCIÓN DE PROBLEMAS:
+
+**Error: "No se encontró Python ni Node.js"**
+- Instala Node.js desde https://nodejs.org/
+- Reinicia la computadora
+- Intenta de nuevo
+
+**El navegador no se abre automáticamente:**
+- Abre manualmente: http://localhost:8080
+- Verifica que el puerto 8080 no esté en uso
+
+**Pantalla en blanco:**
+- Presiona F5 para recargar
+- Borra caché del navegador (Ctrl+Shift+Delete)
+
+### 📞 SOPORTE:
+
+Desarrollado por: Alfredo Jesus Zappa
+Sistema de Gestión de Cruceros v1.0
+
+---
+
+¡Disfruta del sistema! 🚢⚓

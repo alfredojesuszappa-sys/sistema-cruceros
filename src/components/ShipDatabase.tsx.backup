@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Ship as ShipIcon, 
   Plus, 
@@ -66,7 +66,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
   const filterShips = () => {
     let filtered = [...ships];
 
-    // BÃºsqueda por texto (combinar globalSearch y searchTerm local)
+    // Búsqueda por texto (combinar globalSearch y searchTerm local)
     const combinedSearch = (globalSearch + ' ' + searchTerm).trim();
     if (combinedSearch) {
       filtered = filtered.filter(ship =>
@@ -121,7 +121,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
   };
 
   const handleDelete = (id: string) => {
-    if (confirm('Â¿EstÃ¡ seguro de eliminar este buque?')) {
+    if (confirm('¿Está seguro de eliminar este buque?')) {
       deleteShip(id);
       loadShipsData();
     }
@@ -134,29 +134,29 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
   const confirmDeleteAll = () => {
     if (deleteConfirmText.toUpperCase() !== 'ELIMINAR TODO') {
-      alert('âš ï¸ Debe escribir exactamente "ELIMINAR TODO" para confirmar');
+      alert('⚠️ Debe escribir exactamente "ELIMINAR TODO" para confirmar');
       return;
     }
 
-    // Segunda confirmaciÃ³n
+    // Segunda confirmación
     const finalConfirm = confirm(
-      `âš ï¸ ÃšLTIMA CONFIRMACIÃ“N\n\n` +
-      `EstÃ¡ a punto de eliminar TODOS los ${ships.length} buques de la base de datos.\n\n` +
-      `Esta acciÃ³n NO se puede deshacer.\n\n` +
-      `Â¿EstÃ¡ absolutamente seguro de continuar?`
+      `⚠️ ÚLTIMA CONFIRMACIÓN\n\n` +
+      `Está a punto de eliminar TODOS los ${ships.length} buques de la base de datos.\n\n` +
+      `Esta acción NO se puede deshacer.\n\n` +
+      `¿Está absolutamente seguro de continuar?`
     );
 
     if (finalConfirm) {
       saveShips([]);
       loadShipsData();
       setShowDeleteAllModal(false);
-      alert('âœ… Todos los buques han sido eliminados de la base de datos');
+      alert('✅ Todos los buques han sido eliminados de la base de datos');
     }
   };
 
   const handleSubmit = () => {
     if (!formData.buque || !formData.imo || !formData.calado) {
-      alert('âš ï¸ Complete los campos obligatorios: Buque, IMO y Calado');
+      alert('⚠️ Complete los campos obligatorios: Buque, IMO y Calado');
       return;
     }
 
@@ -172,7 +172,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
     };
 
     if (editingShip) {
-      console.log('ðŸ”„ Actualizando buque:', editingShip.id);
+      console.log('🔄 Actualizando buque:', editingShip.id);
       updateShip(editingShip.id, shipData);
       
       // NUEVO: Sincronizar con cruceros existentes
@@ -185,7 +185,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
           const updatedCrossings = crossings.map((crossing: any) => {
             if (crossing.ship.id === editingShip.id) {
               updatedCount++;
-              console.log(`  âœ… Actualizando crucero: ${crossing.ship.buque} â†’ ${shipData.buque}`);
+              console.log(`  ✅ Actualizando crucero: ${crossing.ship.buque} → ${shipData.buque}`);
               
               // Recalcular tiempos con el nuevo calado
               const { calculateEntryTimes, calculateExitTimes } = require('../lib/ships');
@@ -209,30 +209,30 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
           
           if (updatedCount > 0) {
             localStorage.setItem('ship_crossings', JSON.stringify(updatedCrossings));
-            console.log(`âœ… ${updatedCount} crucero(s) actualizado(s)`);
+            console.log(`✅ ${updatedCount} crucero(s) actualizado(s)`);
             
             // Recalcular reservas de canal
             const { calculateReservations } = require('./ChannelReservations');
             const ships = loadShips();
             const reservations = calculateReservations(updatedCrossings, ships);
             localStorage.setItem('channelReservations', JSON.stringify(reservations));
-            console.log('âœ… Reservas de canal recalculadas');
+            console.log('✅ Reservas de canal recalculadas');
           }
         }
       } catch (error) {
-        console.error('âŒ Error sincronizando cruceros:', error);
+        console.error('❌ Error sincronizando cruceros:', error);
       }
       
-      alert('âœ… Buque actualizado y sincronizado con cruceros existentes');
+      alert('✅ Buque actualizado y sincronizado con cruceros existentes');
     } else {
       addShip(shipData);
-      alert('âœ… Buque agregado');
+      alert('✅ Buque agregado');
     }
 
     loadShipsData();
     setShowForm(false);
     
-    // Recargar pÃ¡gina para sincronizar todos los componentes
+    // Recargar página para sincronizar todos los componentes
     setTimeout(() => {
       window.location.reload();
     }, 500);
@@ -357,7 +357,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
           }}>
             <div>
               <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                ðŸ” Buscar
+                🔍 Buscar
               </label>
               <div style={{ position: 'relative' }}>
                 <Search 
@@ -389,7 +389,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
             <div>
               <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                ðŸŽ¯ Filtrar por Clase
+                🎯 Filtrar por Clase
               </label>
               <select
                 value={filterClass}
@@ -405,15 +405,15 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                 }}
               >
                 <option value="ALL">Todas las Clases</option>
-                <option value="A">Clase A (â‰¥8.84m)</option>
+                <option value="A">Clase A (≥8.84m)</option>
                 <option value="B">Clase B (7.33-8.83m)</option>
-                <option value="C">Clase C (â‰¤7.32m)</option>
+                <option value="C">Clase C (≤7.32m)</option>
               </select>
             </div>
 
             <div>
               <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                ðŸ¢ Filtrar por Agencia
+                🏢 Filtrar por Agencia
               </label>
               <select
                 value={filterAgency}
@@ -488,16 +488,16 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
               <div style={{ textAlign: 'center', marginBottom: '30px' }}>
                 <AlertTriangle size={60} style={{ color: '#fef3c7', marginBottom: '20px' }} />
                 <h2 style={{ color: 'white', fontSize: '28px', fontWeight: '800', marginBottom: '15px' }}>
-                  âš ï¸ ADVERTENCIA CRÃTICA
+                  ⚠️ ADVERTENCIA CRÍTICA
                 </h2>
                 <p style={{ color: 'white', fontSize: '16px', lineHeight: '1.6', marginBottom: '20px' }}>
-                  EstÃ¡ a punto de <strong>ELIMINAR TODOS LOS {ships.length} BUQUES</strong> de la base de datos.
+                  Está a punto de <strong>ELIMINAR TODOS LOS {ships.length} BUQUES</strong> de la base de datos.
                 </p>
                 <p style={{ color: '#fef3c7', fontSize: '14px', fontWeight: '600', marginBottom: '10px' }}>
-                  â›” Esta acciÃ³n es PERMANENTE e IRREVERSIBLE
+                  ⛔ Esta acción es PERMANENTE e IRREVERSIBLE
                 </p>
                 <p style={{ color: '#fef3c7', fontSize: '14px', marginBottom: '0' }}>
-                  â›” NO se puede deshacer
+                  ⛔ NO se puede deshacer
                 </p>
               </div>
 
@@ -528,7 +528,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                   type="text"
                   value={deleteConfirmText}
                   onChange={(e) => setDeleteConfirmText(e.target.value)}
-                  placeholder="Escriba aquÃ­..."
+                  placeholder="Escriba aquí..."
                   style={{
                     width: '100%',
                     padding: '16px',
@@ -580,7 +580,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                     opacity: deleteConfirmText.toUpperCase() === 'ELIMINAR TODO' ? 1 : 0.5
                   }}
                 >
-                  âš ï¸ CONFIRMAR ELIMINACIÃ“N
+                  ⚠️ CONFIRMAR ELIMINACIÓN
                 </button>
               </div>
             </div>
@@ -634,7 +634,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
               </button>
 
               <h2 style={{ color: 'white', marginBottom: '30px', fontSize: '28px' }}>
-                {editingShip ? 'âœï¸ Editar Buque' : 'âž• Agregar Nuevo Buque'}
+                {editingShip ? '✏️ Editar Buque' : '➕ Agregar Nuevo Buque'}
               </h2>
 
               <div style={{ 
@@ -645,7 +645,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
               }}>
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    ðŸš¢ Buque *
+                    🚢 Buque *
                   </label>
                   <input
                     type="text"
@@ -665,7 +665,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    ðŸ´ Bandera
+                    🏴 Bandera
                   </label>
                   <input
                     type="text"
@@ -679,13 +679,13 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                       background: 'rgba(255, 255, 255, 0.9)',
                       fontSize: '14px'
                     }}
-                    placeholder="PaÃ­s de bandera"
+                    placeholder="País de bandera"
                   />
                 </div>
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    ðŸ”¢ IMO *
+                    🔢 IMO *
                   </label>
                   <input
                     type="text"
@@ -699,13 +699,13 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                       background: 'rgba(255, 255, 255, 0.9)',
                       fontSize: '14px'
                     }}
-                    placeholder="NÃºmero IMO"
+                    placeholder="Número IMO"
                   />
                 </div>
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    ðŸ“ Eslora (m)
+                    📏 Eslora (m)
                   </label>
                   <input
                     type="number"
@@ -726,7 +726,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    â†”ï¸ Manga (m)
+                    ↔️ Manga (m)
                   </label>
                   <input
                     type="number"
@@ -747,7 +747,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    â†•ï¸ Puntal (m)
+                    ↕️ Puntal (m)
                   </label>
                   <input
                     type="number"
@@ -768,7 +768,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    âš“ Calado (m) *
+                    ⚓ Calado (m) *
                   </label>
                   <input
                     type="number"
@@ -803,7 +803,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
 
                 <div>
                   <label style={{ color: 'white', display: 'block', marginBottom: '8px', fontSize: '14px', fontWeight: '600' }}>
-                    ðŸ¢ Agencia
+                    🏢 Agencia
                   </label>
                   <input
                     type="text"
@@ -817,7 +817,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                       background: 'rgba(255, 255, 255, 0.9)',
                       fontSize: '14px'
                     }}
-                    placeholder="Agencia marÃ­tima"
+                    placeholder="Agencia marítima"
                   />
                 </div>
               </div>
@@ -878,7 +878,7 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
             }}>
               <thead>
                 <tr style={{ background: '#0c4a6e', color: 'white' }}>
-                  <th style={{ padding: '14px 10px', textAlign: 'center', fontWeight: '700' }}>NÂ°</th>
+                  <th style={{ padding: '14px 10px', textAlign: 'center', fontWeight: '700' }}>N°</th>
                   <th style={{ padding: '14px 10px', textAlign: 'left', fontWeight: '700' }}>Buque</th>
                   <th style={{ padding: '14px 10px', textAlign: 'center', fontWeight: '700' }}>Bandera</th>
                   <th style={{ padding: '14px 10px', textAlign: 'center', fontWeight: '700' }}>IMO</th>
@@ -935,16 +935,16 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
                           {ship.imo}
                         </td>
                         <td style={{ padding: '12px 10px', textAlign: 'center' }}>
-                          {typeof ship.eslora === 'number' ? ship.eslora.toFixed(2) : '0.00'}
+                          {ship.eslora.toFixed(2)}
                         </td>
                         <td style={{ padding: '12px 10px', textAlign: 'center' }}>
-                          {typeof ship.manga === 'number' ? ship.manga.toFixed(2) : '0.00'}
+                          {ship.manga.toFixed(2)}
                         </td>
                         <td style={{ padding: '12px 10px', textAlign: 'center' }}>
-                          {typeof ship.puntal === 'number' ? ship.puntal.toFixed(2) : '0.00'}
+                          {ship.puntal.toFixed(2)}
                         </td>
                         <td style={{ padding: '12px 10px', textAlign: 'center', fontWeight: '700', color: classColor }}>
-                          {typeof ship.calado === 'number' ? ship.calado.toFixed(2) : '0.00'}
+                          {ship.calado.toFixed(2)}
                         </td>
                         <td style={{ padding: '12px 10px', textAlign: 'center' }}>
                           <span style={{
@@ -1015,8 +1015,6 @@ export function ShipDatabase({ globalSearch = '' }: ShipDatabaseProps) {
     </div>
   );
 }
-
-
 
 
 
